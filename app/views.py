@@ -31,3 +31,22 @@ def Show_Records(request):
     
     d = {'Records' : LOA}
     return render(request, 'Show_Records.html', d)
+
+def Update_Webpage(request):
+    Webpage.objects.filter(name='DHONI').update(url='https://www.dhoni.in')
+    Webpage.objects.filter(name='VIRAT').update(url='https://www.vk18.in')
+    Webpage.objects.filter(topic_name='CRICKET').update(url='https://www.vk18.in')
+    Webpage.objects.update_or_create(name='DHONI', defaults={'url':'https://msdhoni.com'})
+    T=Topic.objects.get_or_create(topic_name='CRICKET')[0]
+    T.save()
+    Webpage.objects.update_or_create(name='HARDIK',defaults={'topic_name':T,'url':'https://hardik.in'})
+    
+    d = {'wdetails' : Webpage.objects.all()}
+    return render(request,'Show_Webpage.html', d)
+
+
+def Delete_Webpage(request):
+    Webpage.objects.filter(topic_name='CHESS').delete()
+    
+    d = {'wdetails' : Webpage.objects.all()}
+    return render(request, 'Show_Webpage.html', d)

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AccessRecords Details</title>
+</head>
+<body style="background-color:cyan">
+    <center>
+        <h1>SHOW ACCESS RECORDS DETAILS</h1>
+
+        <table border="3px" width="500px" height="300px" style="background-color:pink">
+
+            <tr>
+                <th>name</th>
+                <th>author</th>
+                <th>date</th>
+            </tr>
+        {% for AO in Records %}
+            <tr>
+                <td style="text-align:center">{{AO.name}}</td>
+                <td style="text-align:center">{{AO.author}}</td>
+                <td style="text-align:center">{{AO.date}}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </center>
+</body>
+</html>

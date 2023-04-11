@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Details</title>
+</head>
+<body style="background-color:cyan">
+    <center>
+        <h1>SHOW WEBPAGE DETAILS</h1>
+
+        <table border="2px" width="500px" height="300px" style="background-color:pink">
+
+            <tr>
+                <th>topic_name</th>
+                <th>name</th>
+                <th>url</th>
+            </tr>
+
+        {% for WO in wdetails %}
+            <tr>
+                <td style="text-align:center">{{WO.topic_name}}</td>
+                <td style="text-align:center">{{WO.name}}</td>
+                <td style="text-align:center">{{WO.url}}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </center>
+</body>
+</html>
